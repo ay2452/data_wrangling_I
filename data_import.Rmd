@@ -51,6 +51,10 @@ litters_data = read_csv(file = "./data/FAS_litters.csv",
   )
 )
 ##if have space in between for column names, include backticks around words
+##read_csv bring in under tibble, read.csv is regular dataset; tibble crankier
+litters_data$Litt
+##don't use dollar sign
+class(pull(litters_data,Group))
 ```
 
 ##Read in an excel file
@@ -62,4 +66,11 @@ mlb11_data = read_excel("./data/mlb11.xlsx")
 ##Read in SAS dataset
 
 ```{r}
-pulse_data = 
+pulse_data = haven::read_sas("./data/public_pulse_data.sas7bdat")
+```
+
+##Exporting dataset
+```{r}
+write_csv(mlb11_Data_subset, path = "./data/mlb_subset.csv)
+#use write_csv, not write.csv
+```
