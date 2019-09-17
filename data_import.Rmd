@@ -7,6 +7,16 @@ output: github_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-```
+
 
 library(tidyverse)
+```
+
+## Load in dataset
+
+```{r}
+##reads in a dataset
+##general rule, use relative path, NOT absolute path 
+litters_data = read_csv(file = "./data/FAS_litters.csv")
+```
+```
