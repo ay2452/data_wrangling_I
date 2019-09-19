@@ -74,35 +74,3 @@ pulse_data = haven::read_sas("./data/public_pulse_data.sas7bdat")
 write_csv(mlb11_Data_subset, path = "./data/mlb_subset.csv)
 #use write_csv, not write.csv
 ```
-
-##Importing datasets
-
-```{r}
-litters_data = read_csv("./data/FAS_litters.csv")
-litters_data = janitor::clean_names(litters_data)
-
-pups_data = read_csv ("./data/FAS_pups.csv")
-pups_data = janitor::clean_names(pups_data)
-```
-
-##Selecting!!
-
-```{r}
-select(litters_data, group, litter_number, gd0_weight, starts_with("pups"))
-
-select (litters_data, litter_number, group, gd0_weight)
-##R give back columns in order specified; order matters
-
-select (litters_data, litter_number, group, everything())
-##select litter# first, then group, then everything else
-
-select (litters_data, -group,)
-##-group removes group
-
-select (litters_data, litter_number, gd0_weight:pups_born_alive)
-##want everything btwn gd0_weight and pups_born_alive
-
-litters)selected = select (litters_data, litter_number, gd0_weight:pups_born_alive)
-##creating new dataframe including only those specified
-
-```
